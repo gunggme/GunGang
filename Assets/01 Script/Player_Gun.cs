@@ -30,7 +30,6 @@ public class Player_Gun : MonoBehaviour
             var assistPoint = Mathf.InverseLerp(0, _maxY, _rb.velocity.y);
             var assistAmount = Mathf.Lerp(_maxUpAssist, 0, assistPoint);
             var forceDir = -transform.forward * _movePower + Vector3.up * assistAmount;
-            forceDir.z = Mathf.Abs(forceDir.z);
             if (_rb.position.y > _maxY) forceDir.y = Mathf.Min(0, forceDir.y);
             _rb.AddForce(forceDir);
 
